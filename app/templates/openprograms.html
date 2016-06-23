@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+		<!--  © Copyright 2016, Denise Irvin. -->
+<!--
+    I cut up the template quite a bit, and made it simpler. -Denise
+-->
+<html>
+	<head>
+		<title>Script Kiddie Starter Kit</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="../static/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="../static/assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Content -->
+			<div id="content">
+				<div class="inner">
+
+					<!-- Post -->
+						<article class="box post post-excerpt">
+							<header>
+								<h2><a href="#">Opening Programs</a></h2>
+								<p>Learn some things about your magical computer.
+							</header>
+
+							<p>
+								It is possible to run programs from a python script. Using the <strong>Subprocess module</strong>. Check
+								out this script:
+							<br>
+							<br>
+								<pre>
+										import subprocess
+										subprocess.call('notepad.exe')
+								</pre>
+							<br>
+								Running subprocess.call will execute the command in the parenthesis. If a file ends in .exe, that is a sign
+								that the file is an executable file. So 'notepad.exe' is a command that will run the 'notepad.exe' file, which
+								happens to open and run a program called notepad. How does Windows find the notepad program? There are certain
+								folders in windows that are a part of your environment's 'path', and any program in here can be accessed without
+								a full file path. You want to see your system's path, open a command prompt and type in "echo %PATH%". You will
+								see that "C:\Windows" is in there- this folder contains notepad.exe, and is why your system has access to it,
+								without typing in a full path name. You can add more folders to this path if you want. Anyway. "calc.exe" will
+								open a calculator app.
+							<br>
+							<br>
+								A fun* thing to do is to open up a bunch of windows for a computer. In python, you can write loops. Code inside
+								the loop will be execued a bunch of times. Check it out:
+							<pre>
+								for x in range(0,5):
+									print "wow such loop"
+							</pre>
+								The code inside the loop will be executed five times. Let me explain: unlike loops in cpp or java, this for loop
+								does not actually count- it goes through a list. range(0,5) generates a list [0,1,2,3,4]. Thats right, it starts at
+								0 and ends at 4, instead of going to five. The loop runs once for every element in the list, which is five times.
+								This means you can write a script like:
+							<pre>
+								import subprocess
+								for x in range(0,5):
+									subprocess.call('calc.exe')
+							</pre>
+								And five calculators will appear on your screen! But maybe five isn't enough for you. You want more, you need more.
+								And instead of calming down and asking yourself if this is a good thing to want, you set out to get it. So that brings
+								us to the other kind of loop: the while loop. The while loop has similar syntax":
+							<pre>
+								import subprocess
+								x = 0
+								while x < 8:
+									subprocess.call('calc.exe')
+									x = x + 1
+							</pre>
+								In this case, the code inside the loop is run every time the expression in the "while" line evaluates to true. So as
+								long as x < 8, a calculator will be open. Of course, this means you could put an expression that is always true in there-
+								"Tacos" == "Tacos", 5 < 6, or even just the word True (True must be capitalized and not in quotes.) Congratulations! You
+								are the proud creator of an infinite loop! Woo!
+							<br>
+							<br>
+							<pre>
+								import subprocess
+								x = 0
+								while True:
+									subprocess.call('calc.exe')
+									x = x + 1
+							</pre>
+							<br>
+							<br>
+								Now that you have this runaway train, you might want to think about derailing it. The best way to do that is crash your
+								computer. Just kidding. All you have to do is kill the process that is creating all of the calculator instances. You can
+								either right click the icon of your program in the taskbar at your computer and hit "close window" or open up task manager,
+								right click your program, and hit "end task." All's good.
+							<br>
+							<br>
+
+							Now, you have a script that can open a lot of programs. You have climbed the mountain!
+						</article>
+
+
+					<!-- Post -->
+
+
+				</div>
+			</div>
+
+		<!-- Sidebar -->
+			<div id="sidebar">
+
+				<!-- Logo -->
+					<h1 id="logo"><a href="#">SKSK</a></h1>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="#">Home Page</a></li>
+							<li><a href="#">Friendly Intro</a></li>
+							<li><a href="#">Desktop Background</a></li>
+							<li><a href="#">CD Drive & Hardware</a></li>
+							<li><a href="#">Open Programs</a></li>
+							<li><a href="#">Shutdown</a></li>
+						</ul>
+					</nav>
+
+				<!-- Text -->
+					<section class="box text-style1">
+						<div class="inner">
+							<p>
+								<strong>Licensing:</strong> All script snippets are licensed under <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a>
+							</p>
+						</div>
+					</section>
+
+				<!-- Copyright -->
+					<ul id="copyright">
+						<li>&copy; 2016, Denise Irvin.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+		<!--  © Copyright 2016, Denise Irvin. -->
