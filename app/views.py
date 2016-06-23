@@ -15,3 +15,7 @@ def shutdown():
 @app.route('/openprograms')
 def openprograms():
     return render_template('openprograms.html')
+
+@app.route('/desktopbackground')
+def desktopbackgrounds():
+    return render_template('desktopbackground.html')
