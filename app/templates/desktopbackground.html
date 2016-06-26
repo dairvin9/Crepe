@@ -43,10 +43,11 @@
 										import ctypes
 										image_path="C:\\Users\\Me\\Documents\\GitHub\\raw scripts\\taylorSwiftFaceQuote.jpg"
 										SPI_SETDESKWALLPAPER = 20
-										ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, image_path, 3)
+										fWinIni = 3
+										ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, image_path, fWinIni)
 								</pre>
 							<br>
-								It is the fourth line that makes the magic, but I want to explain the second line, the image path first. This line
+								It is the fifth line that makes the magic, but I want to explain the second line, the image path first. This line
 								saves a string of the absolute path of the image to a variable. You have to give the absolute path- the relative path
 								does not work here. A relative path is something that helps you find the file, based on your current directory. An absolute path
 								works no matter where you start in the system. In windows, it usually starts with a drive letter. I am using my local disk drive,
@@ -65,19 +66,36 @@
 								correctly! Woo!
 							<br>
 							<br>
-								Now lets look at that fourth line:
+								Now lets look at that fifth line:
 								<pre>
-									ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, image_path, 3)
+									ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, image_path, fWinIni)
 								</pre>
-								This function takes four parameters.
+								This function takes four parameters. You can read about the function at the doc page
+							<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms724947(v=vs.85).aspx">
+								msdn.microsoft.com/en-us/library/windows/desktop/ms724947(v=vs.85).aspx</a>, or read below.
 
+							<br>
+							<br>
 							<!-- TODO: Fix this list -->
 								<ol type="1">
-									<li>The first parameter is</li>
-									<li>This</li>
-									<li>Obviously, this parameter is the path to the image you wish to set as your desktop background.</li>
-									<li>This last number </li>
+									<li>This parameter tells windows which "system-wide" parameter you want to set. This function can be
+									used to control other settings, including accessibility settings and power settings. By setting this value
+									to twenty, or the hexadecimal value 14, we are telling the function we want to work with the desktop background.</li>
+									<li>This parameter is only used for certain settings, including some of the accessibility settings,
+										like getting information about stickykeys. Because we are changing the desktop background, we
+									do not use this parameter, and pass 0. Aside: most people do not recommend you create functions like this.</li>
+									<li>Obviously, this parameter, called pvParam, is the path to the image you wish to set as your desktop background. Its called
+									pvParam because, for other settings, it passes differnet information.</li>
+									<li>This last number, the fWinIni parameter, specifies how permanent the change is. If a zero is given, the user profile is
+									not updated with the new screensaver, and no settings changed is broadcasted to other windows. Specifying
+									this as the value 3 updates the user profile with the new profile.</li>
 								</ol>
+
+							<p>
+								The cool thing about this function, SetParametersInfo, is that it can be used to programmatically change
+								so many settings, like the speed of your mouse or icon settings. This script can be rewritten to do so
+								much more, so be sure to check out the function documentation <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms724947(v=vs.85).aspx">msdn.microsoft.com/en-us/library/windows/desktop/ms724947(v=vs.85).aspx</a>.
+							</p>
 						</article>
 
 
@@ -109,7 +127,7 @@
 					<section class="box text-style1">
 						<div class="inner">
 							<p>
-								<strong>Licensing:</strong> All script snippets are licensed under <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a>
+							<!--	<strong>Licensing:</strong> All script snippets are licensed under -->
 							</p>
 						</div>
 					</section>
