@@ -1984,6 +1984,15 @@
 		position: relative;
 	}
 
+	.code-snippit {
+		color: #00CED1;
+		background-color: #eee;
+		display: block;
+		font-family: monospace;
+		white-space: pre;
+		/*margin: 1em 0;*/
+		text-align: left;
+	}
 		.box.post .info .stats {
 			margin: 0;
 			cursor: default;
@@ -2247,7 +2256,7 @@
 				box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.075);
 				display: block;
 				height: 0.5em;
-				margin: 0 0 2em 0;
+				margin: 0 0 1em 0;
 			}
 
 		#sidebar strong, #sidebar b {
@@ -2582,7 +2591,7 @@
 
 			#content {
 				padding: 3em 5em 8em 5em;
-				margin-left: 21em;
+				margin-left: 14em;
 			}
 
 	}

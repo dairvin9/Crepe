@@ -1,5 +1,4 @@
-This is a flask app that is under construction. Flask is great, so it will probably be done soon.
-
+This is a "learn trivial scripting" website that it currently under construction. I am adding one more webpage and looking up legality things of owning this kind of website.
 
 
 

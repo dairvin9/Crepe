@@ -40,14 +40,10 @@
 								What is great is that there is a python module (actually there's four modules) that lets you
 								execute these commands in a python script. For this, let's use the <strong>Subprocess module</strong>.
 							<br>
-							<br>
-							<pre>
-								import subprocess
-								subprocess.call('dir')
-							</pre>
-							<br>
-							<br>
-								Sweet! You have a boring program that lists everything in the current folder! What is cool is that this works with
+							<br><pre class="code-snippit">import subprocess<br>subprocess.call('dir')</pre>
+
+								<br>
+							    Sweet! You have a boring program that lists everything in the current folder! What is cool is that this works with
 								other commands. Lots more commands. It's statistically likely at least one is a command you care about. Lets check
 								out restart/shutdown.
 							<br>
@@ -57,12 +53,13 @@
 								which calls the shutdown program (shutdown.exe can be found in your System32 file)
 								and "-l" and "-r" are called arguments or parameters, which are values passed to the shutdown program. If no
 								arguments are specified, the default action is to turn off the computer. So write this script:
-							<pre>
-								import subprocess
-								subprocess.call('shutdown')
-								# subprocess.call(['shutdown', '-r'])
-								# subprocess.call(['shutdown', '-l'])
-							</pre>
+							<br>
+							<br>
+							<pre class="code-snippit">import subprocess
+subprocess.call('shutdown')
+# subprocess.call(['shutdown', '-r'])
+# subprocess.call(['shutdown', '-l'])</pre>
+							<br>
 								BTW: Anything followed by a # is ignored by the computer. If you want the script to restart your computer
 								instead of shutting down the computer, put a # in front of the first subprocess call and remove the # from the
 								line with '-r'.
@@ -74,10 +71,11 @@
 								ctype.</strong> This module lets you use built in Windows Libraries- specifically the Dynamic Link Libraries (dll).
 								Essentially this means you can use system code in your script. One thing you can do with this is create notifications
 								that look like the classic windows notifications. See below:
-							<pre>
-								import ctypes  # An included library with Python install.
-								ctypes.windll.user32.MessageBoxA(None, "Your text", "Your title", 0)
-							</pre>
+							<br>
+							<br>
+							<pre class="code-snippit">import ctypes  # An included library with Python install.
+ctypes.windll.user32.MessageBoxA(None, "Your text", "Your title", 0)</pre>
+							<br>
 								So the first line imports the module, adn the second line makes the magic. There are four parameters here:
 								the first specifies the parent, or the window that "owns" this window. You don't have to have a parent window,
 								and we really don't care about assigning one, so we just write "None" which is Python's null object.
@@ -89,12 +87,13 @@
 							<br>
 							<br>
 							Almost done! If you put it together, you can get a script like this:
-							<pre>
-								import subprocess
-								import ctypes  # An included library with Python install.
-								ctypes.windll.user32.MessageBoxA(None, "System Message", "Press any key to delete system.", 0)
-								subprocess.call('shutdown')
-							</pre>
+							<br>
+							<br>
+							<pre class="code-snippit">import subprocess
+import ctypes  # An included library with Python install.
+ctypes.windll.user32.MessageBoxA(None, "System Message", "Press any key to delete system.", 0)
+subprocess.call('shutdown')</pre>
+							<br>
 							Now, if this script is run, a message box will pop up and your computer will turn off. Handy!
 						</article>
 
@@ -117,9 +116,9 @@
 							<li><a href="/index">Home Page</a></li>
 							<li><a href="/friendlyintro">Friendly Intro</a></li>
 							<li><a href="/desktopbackground">Desktop Background</a></li>
-							<li><a href="/cddriveandhardware">CD Drive & Hardware</a></li>
-							<li class="current"><a href="/openprograms">Open Programs</a></li>
-							<li><a href="/shutdown">Shutdown</a></li>
+							<!--<li><a href="/cddriveandhardware">CD Drive & Hardware</a></li>-->
+							<li><a href="/openprograms">Open Programs</a></li>
+							<li class="current"><a href="/shutdown">Shutdown</a></li>
 						</ul>
 					</nav>
 
@@ -127,7 +126,7 @@
 					<section class="box text-style1">
 						<div class="inner">
 							<p>
-								<!--	<strong>Licensing:</strong> All script snippets are licensed under -->
+								<strong>Licensing:</strong> All code on the website is under <a href="http://www.freebsd.org/copyright/freebsd-license.html">FreeBSD Copyright</a>
 							</p>
 						</div>
 					</section>

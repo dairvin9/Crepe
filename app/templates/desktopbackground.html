@@ -39,13 +39,11 @@
 								This script is pretty simple. All that must be done is to import ctypes, feed the program the path to the
 								image, and call a ctype method to set the background.
 								<picture class=""></picture>
-								<pre>
-										import ctypes
-										image_path="C:\\Users\\Me\\Documents\\GitHub\\raw scripts\\taylorSwiftFaceQuote.jpg"
-										SPI_SETDESKWALLPAPER = 20
-										fWinIni = 3
-										ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, image_path, fWinIni)
-								</pre>
+								<pre class="code-snippit">import ctypes
+image_path="C:\\Users\\Me\\Documents\\GitHub\\raw scripts\\taylorSwiftFaceQuote.jpg"
+SPI_SETDESKWALLPAPER = 20
+fWinIni = 3
+ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, image_path, fWinIni)</pre>
 							<br>
 								It is the fifth line that makes the magic, but I want to explain the second line, the image path first. This line
 								saves a string of the absolute path of the image to a variable. You have to give the absolute path- the relative path
@@ -67,9 +65,7 @@
 							<br>
 							<br>
 								Now lets look at that fifth line:
-								<pre>
-									ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, image_path, fWinIni)
-								</pre>
+								<pre class="code-snippit">ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, image_path, fWinIni)</pre>
 								This function takes four parameters. You can read about the function at the doc page
 							<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms724947(v=vs.85).aspx">
 								msdn.microsoft.com/en-us/library/windows/desktop/ms724947(v=vs.85).aspx</a>, or read below.
@@ -117,7 +113,7 @@
 							<li><a href="/index">Home Page</a></li>
 							<li><a href="/friendlyintro">Friendly Intro</a></li>
 							<li class="current"><a href="/desktopbackground">Desktop Background</a></li>
-							<li><a href="/cddriveandhardware">CD Drive & Hardware</a></li>
+							<!--<li><a href="/cddriveandhardware">CD Drive & Hardware</a></li>-->
 							<li><a href="/openprograms">Open Programs</a></li>
 							<li><a href="/shutdown">Shutdown</a></li>
 						</ul>
@@ -127,7 +123,7 @@
 					<section class="box text-style1">
 						<div class="inner">
 							<p>
-							<!--	<strong>Licensing:</strong> All script snippets are licensed under -->
+								<strong>Licensing:</strong> All code on the website is under <a href="http://www.freebsd.org/copyright/freebsd-license.html">FreeBSD Copyright</a>
 							</p>
 						</div>
 					</section>
